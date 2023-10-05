@@ -1,3 +1,9 @@
+const choice = document.querySelectorAll('li img');
+const imageComputer = document.querySelector('.img-computer');
+const info = document.querySelector('.info');
+let scorePlayer = 0;
+let scoreComputer = 0;
+
 function getComputerChoice() {
   let computer = Math.random();
 
@@ -9,12 +15,6 @@ function getComputerChoice() {
   }
   return 'scissor';
 }
-
-const choice = document.querySelectorAll('li img');
-const imageComputer = document.querySelector('.img-computer');
-const info = document.querySelector('.info');
-let scorePlayer = 0;
-let scoreComputer = 0;
 
 function getResult(computer, player) {
   if (computer == player) {
@@ -69,7 +69,7 @@ choice.forEach(function (image) {
     rollingChoice();
 
     setTimeout(function () {
-      imageComputer.setAttribute('src', `img/${getComputer}.jpg`);
+      imageComputer.setAttribute('src', `../img/${getComputer}.jpg`);
       getScore(result);
       info.innerHTML = result;
     }, 1000);
